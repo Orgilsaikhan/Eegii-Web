@@ -49,7 +49,8 @@ body {
     /* Change 'infinite' to 'forwards' */
 }
 
-animation: animate 3s linear infinite;
+animation: {
+    animate 3s linear infinite;
 }
 
 
@@ -172,16 +173,12 @@ nav ul li:active {
 
 .header-left {
     flex-basis: 55%;
+}
 
-    .header-left {
-        flex-basis: 40%;
-    }
+.header-left {
+    flex-basis: 40%;
+}
 
-    .header-right {
-        flex-basis: 35%;
-    }
-
-    .header-right img {
-        width: 100%;
-        border-radius: 8px;
-    }
+.header-right {
+    flex-basis: 35%;
+}
