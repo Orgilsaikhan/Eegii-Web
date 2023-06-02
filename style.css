@@ -14,7 +14,7 @@ body{
 #header{
     width: 100%;
     height: 100vh;
-    background-image: url(./Images/Eegii-cover-1.jpg);
+    /* background-image: ; */
     background-size: cover;
     background-position: right;
 }
@@ -22,9 +22,41 @@ body{
     margin-top: 250px;
     margin-left: -89px;
 }
-.header-text h1 span{
-    color: #092d8f;
+.header-text h2{
+    position: relative;
+    font-size: 4vw;
+    color: #020202;
+    -webkit-text-stroke: 0.3vw #000000;
+    text-transform: uppercase;
 }
+
+.header-text h2::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: #646464;
+    -webkit-text-stroke: 0vw #383d52;
+    border-right: 2px solid #ffffff;
+    overflow: hidden;
+    animation: animate 3s linear forwards; /* Change 'infinite' to 'forwards' */
+  }
+
+  @keyframes animate {
+    0% {
+      width: 0;
+    }
+    70%, 90% {
+      width: 100%;
+    }
+    100% {
+      width: 100%; /* Keep the width at 100% after animation ends */
+    }
+  }
+  
+
 
 .header-text{
     margin-top: 20%;
@@ -42,13 +74,14 @@ nav {
     transform: translateX(-50%);
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center; /* Change to center alignment */
     width: 100%;
-    background-color: #2980b9;
+    background-color: #ffffff;
     padding: 10px 20px;
     box-sizing: border-box;
-    z-index: 999; /* Цэсээ байнга хамгийн дээр байлгана */
+    z-index: 999; /* Place it at the top */
   }
+  
   nav.sticky {
     position: fixed;
     top: 0;
@@ -59,31 +92,45 @@ nav {
   nav ul {
     margin: 0;
     padding: 0;
+    display: flex;
+    justify-content: center; /* Center the items horizontally */
   }
   
   nav ul li {
-    display: inline-block;
     list-style: none;
-    margin: 10px 20px;
+    margin: 0 10px; /* Adjust the margin as needed */
+    border: 2px solid #000000;
+    padding: 8px;
+    border-radius: 8px;
+    font-size: 14px;
   }
   
-  nav ul li a {
-    color: #27ae60 ;
-    text-decoration: none;
-    font-size: 18px;
-    position: relative;
-  }
+  
+
+  
   
 nav ul li{
     display: inline-block;
     list-style: none;
     margin: 10px 20px;
+    border-color: #000000;
+    position: relative;
+    transition: transform 0.3s ease;
+    border-radius: 8px;
+    border: 3px solid #000000; 
+    padding: 8px;
 }
 nav ul li a{
-    color: #092d8f;
+    color: #000000;
     text-decoration: none;
     font-size: 18px;
-    position: relative;
+    border-radius: 6px;
+}
+nav ul li:hover {
+    transform: scale(1.2);
+}
+nav ul li:active{
+    transform: scale(0.96);
 }
 #mendee{
     padding: 80px 0;
